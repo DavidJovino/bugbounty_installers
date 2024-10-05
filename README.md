@@ -1,5 +1,8 @@
 # Ferramenta de Instalação Automática de Ferramentas para Bug Bounty
 
+This README is available in other languages:
+- [English](README_EN.md)
+
 Esta ferramenta automatiza a instalação de várias ferramentas utilizadas em _bug bounty_ e _pentesting_. O script verifica se as ferramentas já estão instaladas no sistema e, caso não estejam, faz a instalação automaticamente, incluindo as dependências necessárias.
 
 ## Ferramentas Instaladas
@@ -71,8 +74,8 @@ Antes de executar o script, certifique-se de ter as seguintes dependências inst
 Primeiro, clone este repositório para o seu sistema:
 
 ```bash
-git clone https://github.com/seuusuario/suarepositorio.git
-cd suarepositorio
+git clone https://github.com/DavidJovino/bugbounty_installers.git
+cd bugbounty_installers
 ```
 
 2. Executando o script de instalação
