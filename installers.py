@@ -11,6 +11,32 @@ def run_command(command):
     else:
         print(f"[!] Falha ao executar: {command}")
         return False
+    
+# Verificar e adicionar variáveis de ambiente no .bashrc ou .zshrc
+def add_go_env_vars():
+    home_dir = os.path.expanduser("~")
+    bashrc_path = os.path.join(home_dir, ".bashrc")
+    zshrc_path = os.path.join(home_dir, ".zshrc")
+    shell_config_file = bashrc_path if os.path.exists(bashrc_path) else zshrc_path
+
+    go_env_vars = """
+    # Go environment variables
+    export GOROOT=/usr/lib/go
+    export GOPATH=$HOME/go
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+    """
+    # Verifica se as variáveis já estão no arquivo de configuração do shell
+    with open(shell_config_file, "r") as file:
+        config_content = file.read()
+
+    if "export GOROOT=/usr/lib/go" not in config_content:
+        print("[+] Adicionando variáveis de ambiente do Go no arquivo de configuração do shell.")
+        with open(shell_config_file, "a") as file:
+            file.write(go_env_vars)
+        print(f"[+] Variáveis de ambiente adicionadas em {shell_config_file}.")
+        print("[!] Por favor, execute 'source ~/.bashrc' ou 'source ~/.zshrc' para aplicar as mudanças.")
+    else:
+        print("[+] Variáveis de ambiente do Go já estão configuradas.")
 
 # Verificar se o pacote Go já foi instalado
 def is_go_tool_installed(tool_name):
@@ -119,6 +145,7 @@ def main():
     run_command("sudo apt update")
     run_command("sudo apt install -y git curl wget")
     run_command("sudo apt-get install -y golang-go")
+    add_go_env_vars()
     manage_all_tools()
 
 if __name__ == "__main__":
