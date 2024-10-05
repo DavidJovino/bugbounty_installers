@@ -77,7 +77,7 @@ cd suarepositorio
 
 2. Executando o script de instalação
 
-Execute o script install_tools.py para instalar automaticamente as ferramentas:
+Execute o script `install_tools.py` para instalar automaticamente as ferramentas:
 
 ```bash
 python3 install_tools.py
@@ -85,7 +85,7 @@ python3 install_tools.py
 
 3. Configurando variáveis de ambiente para o Go
 
-Se você ainda não configurou o ambiente para o Go, o script automaticamente adiciona as seguintes variáveis de ambiente no seu arquivo de configuração do shell (~/.bashrc ou ~/.zshrc):
+Se você ainda não configurou o ambiente para o Go, o script automaticamente adiciona as seguintes variáveis de ambiente no seu arquivo de configuração do shell (`~/.bashrc` ou `~/.zshrc`):
 
 ```bash
 export GOROOT=/usr/lib/go
@@ -103,8 +103,9 @@ source ~/.zshrc
 
 4. Ferramentas que exigem dependências
 
-Para algumas ferramentas, o script também instala automaticamente as dependências necessárias. Por exemplo, para o Naabu, o script garante que o pacote libpcap-dev esteja instalado.
-Uso
+Para algumas ferramentas, o script também instala automaticamente as dependências necessárias. Por exemplo, para o **Naabu**, o script garante que o pacote `libpcap-dev` esteja instalado.
+
+### Uso
 
 Depois de executar o script de instalação, as ferramentas estarão disponíveis no seu sistema. Você pode utilizá-las diretamente no terminal, por exemplo:
 
@@ -118,12 +119,12 @@ Como Funciona
 
  1. O script verifica se as ferramentas já estão instaladas no sistema.
  2. Se uma ferramenta não estiver instalada, o script faz o download e a instala automaticamente.
- 3. O script também instala qualquer dependência necessária (como libpcap-dev para o Naabu).
- 4. As ferramentas Go são instaladas no diretório $GOPATH/bin.
+ 3. O script também instala qualquer dependência necessária (como `libpcap-dev` para o Naabu).
+ 4. As ferramentas Go são instaladas no diretório `$GOPATH/bin`.
 
 Adicionando Novas Ferramentas
 
-Se você deseja adicionar novas ferramentas à lista de instalação automática, edite o dicionário tools no arquivo install_tools.py da seguinte maneira:
+Se você deseja adicionar novas ferramentas à lista de instalação automática, edite o dicionário `tools` no arquivo `install_tools.py` da seguinte maneira:
 
 ```python
 tools = {
@@ -135,11 +136,11 @@ Contribuindo
 
 Contribuições são bem-vindas! Se você quiser adicionar novas funcionalidades ou corrigir bugs, por favor, siga as etapas abaixo:
 
-  1. Faça um fork deste repositório.
-  2. Crie um branch para sua funcionalidade (git checkout -b minha-funcionalidade).
-  3. Faça o commit das suas mudanças (git commit -m 'Adiciona nova funcionalidade').
-  4. Envie o branch para o seu repositório (git push origin minha-funcionalidade).
-  5. Abra um pull request.
+  1. Faça um *fork* deste repositório.
+  2. Crie um *branch* para sua funcionalidade (`git checkout -b minha-funcionalidade`).
+  3. Faça o *commit* das suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`).
+  4. Envie o *branch* para o seu repositório (`git push origin minha-funcionalidade`).
+  5. Abra um *pull request*.
 
 
 
