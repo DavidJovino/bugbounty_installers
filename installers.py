@@ -134,7 +134,7 @@ def manage_all_tools():
         "Shuffledns": {"check": lambda: is_go_tool_installed("shuffledns"), "install": lambda: install_go_program("shuffledns", "github.com/projectdiscovery/shuffledns/cmd/shuffledns")},
         "SQLMap": {"check": lambda: is_apt_package_installed("sqlmap"), "install": lambda: install_apt_program("sqlmap")},
         "Subfinder": {"check": lambda: is_go_tool_installed("subfinder"), "install": lambda: install_go_program("Subfinder", "github.com/projectdiscovery/subfinder/v2/cmd/subfinder")},
-        "Unfur": {"check": lambda: is_go_tool_installed("unfur"), "install": lambda: install_go_program("unfur", "github.com/tomnomnom/unfurl")},
+        "Unfurl": {"check": lambda: is_go_tool_installed("unfurl"), "install": lambda: install_go_program("unfurl", "github.com/tomnomnom/unfurl")},
         "Waybackurls": {"check": lambda: is_go_tool_installed("waybackurls"), "install": lambda: install_go_program("waybackurls", "github.com/tomnomnom/waybackurls")},
         "Gau": {"check": lambda: is_go_tool_installed("gau"), "install": lambda: install_go_program("Gau", "github.com/lc/gau")},
         "DNSgen": {"check": lambda: is_pip_package_installed("dnsgen"), "install": lambda: install_pip_program("dnsgen")},
