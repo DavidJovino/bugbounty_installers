@@ -68,6 +68,16 @@ def is_pip_package_installed(package_name):
     else:
         print(f"[!] {package_name} não está instalado.")
         return False
+    
+# Função para instalar o Naabu com a dependência libpcap-dev
+def install_naabu():
+    if not is_package_installed("libpcap-dev"):
+        print("[+] Instalando dependência libpcap-dev...")
+        run_command("sudo apt-get install libpcap-dev -y")
+
+    print("[+] Instalando Naabu...")
+    run_command("go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest")
+
 
 # Funções de instalação
 def install_go_program(program, repo):
@@ -117,7 +127,7 @@ def manage_all_tools():
         "Httpx": {"check": lambda: is_go_tool_installed("httpx"), "install": lambda: install_go_program("httpx", "github.com/projectdiscovery/httpx/cmd/httpx")},
         "Jaeles": {"check": lambda: is_go_tool_installed("jaeles"), "install": lambda: install_go_program("jaeles", "github.com/jaeles-project/jaeles")},
         "Katana": {"check": lambda: is_go_tool_installed("katana"), "install": lambda: install_go_program("katana", "github.com/projectdiscovery/katana/cmd/katana")},
-        "Naabu": {"check": lambda: is_go_tool_installed("naabu"), "install": lambda: install_go_program("naabu", "github.com/projectdiscovery/naabu/v2/cmd/naabu")},
+        "Naabu": {"check": lambda: is_go_tool_installed("naabu"), "install": install_naabu},
         "Notify": {"check": lambda: is_go_tool_installed("notify"), "install": lambda: install_go_program("notify", "github.com/projectdiscovery/notify/cmd/notify")},
         "Qsreplace": {"check": lambda: is_go_tool_installed("qsreplace"), "install": lambda: install_go_program("qsreplace", "github.com/tomnomnom/qsreplace")},
         "Rush": {"check": lambda: is_go_tool_installed("rush"), "install": lambda: install_go_program("rush", "github.com/shenwei356/rush")},
