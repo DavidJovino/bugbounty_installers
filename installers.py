@@ -71,7 +71,7 @@ def is_pip_package_installed(package_name):
     
 # Função para instalar o Naabu com a dependência libpcap-dev
 def install_naabu():
-    if not is_package_installed("libpcap-dev"):
+    if not is_apt_package_installed("libpcap-dev"):
         print("[+] Instalando dependência libpcap-dev...")
         run_command("sudo apt-get install libpcap-dev -y")
 
